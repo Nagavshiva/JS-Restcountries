@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:#ebf5fc;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    padding: 40px 0;
+    column-gap: 36px;
+  
+}
+.container .card{
+    position: relative;
+    min-width: 250px;
+    height: 510px;
+    box-shadow: insert 5px 5px 5px rgba(0,0,0,0.05),
+                insert -5px -5px 5px rgba(255,255,255,0.5),
+                -5px 5px 5px rgba(0,0,0,0.5),
+                -5px -5px 5px rgba(255,255,255,0.5);
+    border-radius: 15px;
+    margin: 30px;
+   
+}
+
+.container .card .box{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    background:#ebf5fc;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+
+}
+.container .card:hover .box{
+    transform: translateY(-50px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    background: linear-gradient(45deg,#b95ce4,#4f29cd);
+}
+.container .card .box .cards{
+    padding: 20px;
+    text-align:center;
+}
+
+.image{
+    padding: 15px;
+   width: 270px;
+   height: 200px;
+   margin-left:-8px ;
+}
+.card-header{
+    margin-top: 15px;
+    width: 232px;
+    height: 60px;
+    margin-left: 14px;
+}
+.button {
+   
+    border: none;
+    outline: none;
+    color: #fff !important;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius:5px;
+}
+
+.button:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 5px;
+}
+
+.button:active {
+    color:#cd8bec;
+}
+
+.button:active:after {
+    background: transparent;
+}
+
+.button:hover:before {
+    opacity: 1;
+}
+
+.button:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:#0397aa;
+    left: 0;
+    top: 0;
+    border-radius: 5px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+
